@@ -1,10 +1,7 @@
 
 from tensorflow.keras.models import load_model
 from keras.applications.imagenet_utils import preprocess_input
-#flask
-from flask import Flask
-from flask import render_template
-from flask import Response
+
 #streamlit
 import streamlit as st
 import mediapipe as mp
