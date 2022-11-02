@@ -5,4 +5,5 @@ numpy
 streamlit
 pip
 opencv-contrib-python
+opencv-python-headless
 opencv-python
