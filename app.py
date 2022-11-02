@@ -75,7 +75,7 @@ def main():
         col3_text = st.markdown("0.3")
     st.markdown("<hr/>", unsafe_allow_html=True)
     
-    vid = cv2.VideoCapture(0)
+    vid = cv2.VideoCapture(-1)
 
     secuencia =[]
     sentencia = []
@@ -87,7 +87,7 @@ def main():
     with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic:
         while iniciar:
             ret, frame = vid.read()
-            ##frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             image, results = mediapipe_detection(frame, holistic)
             draw_formateado_landmarks(image, results)
             stframe.image(image)
