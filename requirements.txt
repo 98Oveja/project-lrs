@@ -1,5 +1,7 @@
 tensorflow
-keras==2.9.0
-mediapipe==0.8.11
-numpy==1.22.3
+keras
+mediapipe
+numpy
 streamlit
+pip
+opencv-contrib-python
