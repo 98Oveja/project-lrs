@@ -21,11 +21,11 @@ actions = np.array(['por favor','feliz','mucho gusto','perdóname','hola','adió
 
 # -------  generar deteccion mediapipe ---------
 def mediapipe_detection(image, model):
-    #image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) # CONVERSIÓN DE COLOR BGR 2 RGB
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) # CONVERSIÓN DE COLOR BGR 2 RGB
     image.flags.writeable = False                  # La imagen ya no se puede escribir, por eso es false
     results = model.process(image)                 # realizar prediction
     image.flags.writeable = True                   # ahora se puede escribir en la img
-    #image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR) # conversion de color RGB 2 BGR
+    image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR) # conversion de color RGB 2 BGR
     return image, results
 
 # --------- formateo de las marcas medipipe ---------
@@ -87,7 +87,7 @@ def main():
     with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic:
         while iniciar:
             ret, frame = vid.read()
-            #frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             image, results = mediapipe_detection(frame, holistic)
             draw_formateado_landmarks(image, results)
             stframe.image(image)
