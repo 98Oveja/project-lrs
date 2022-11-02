@@ -75,7 +75,7 @@ def main():
         col3_text = st.markdown("0.3")
     st.markdown("<hr/>", unsafe_allow_html=True)
     
-    vid = cv2.VideoCapture(-1)
+    vid = cv2.VideoCapture(0)
 
     secuencia =[]
     sentencia = []
