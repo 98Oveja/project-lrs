@@ -1,5 +1,4 @@
 tensorflow
-Flask==2.1.3
 keras==2.9.0
 mediapipe==0.8.11
 numpy==1.22.3
